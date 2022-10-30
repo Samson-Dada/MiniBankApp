@@ -23,10 +23,6 @@ namespace MiniBankApp
                 _firstName = value;
             }
         }
-
-
-
-
         public string LastName
         {
             get
@@ -46,36 +42,19 @@ namespace MiniBankApp
             {
                 if (IsValid(_email))
                     {
-                    Console.WriteLine("email is valid");
+                    return _email;
                 }
                 else
                 {
-                    Console.WriteLine("email is not valid");
+                    throw new Exception("Email is not valid");
                 }
-                return _email;
+              
             }
-
             set
             {
                 _email = value;
             }
         }
-        //public void ValidateEmail()
-        //{
-        //    //Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-        //    string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
-        //    Match match = regex.Match(email);
-        //    if (_email = IsValid(_email))
-        //            {
-        //        Console.WriteLine("email is valid");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("email is not valid");
-
-        //    }
-        
-        //}
         private static bool IsValid(string email)
         {
             string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
